@@ -1,0 +1,12 @@
+.listItem {
+    display: flex;
+    justify-content: space-between;
+}
+
+.item {
+    color: aqua;
+    width: 15%;
+    text-align: center;
+    border: 1px solid black;
+    padding: 10px;
+}
