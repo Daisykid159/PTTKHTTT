@@ -5,6 +5,7 @@ import Home from '../Home';
 import NhanKhach from '../NhanKhach';
 import QLDV from '../QLDichVu';
 import ThanhToan from '../ThanhToan';
+import Footer from '~/pages/Footer';
 
 function Header() {
     return (
@@ -12,16 +13,16 @@ function Header() {
             <div id='header'>
                 <ul className='listItem'>
                     <li className='item'>
-                        <Link to="pages/Home">Trang chủ</Link>
+                        <Link to="pages/Home" className='link'>Trang chủ</Link>
                     </li>
                     <li className='item'>
-                        <Link to="pages/QlDichVu">QLDV</Link>
+                        <Link to="pages/QlDichVu" className='link'>QLDV</Link>
                     </li>
                     <li className='item'>
-                        <Link to="pages/NhanKhach">Nhận Khách</Link>
+                        <Link to="pages/NhanKhach" className='link'>Nhận Khách</Link>
                     </li>
                     <li className='item'>
-                        <Link to="pages/ThanhToan">Thanh Toán</Link>
+                        <Link to="pages/ThanhToan" className='link'>Thanh Toán</Link>
                     </li>
                 </ul>
                 <Routes>
@@ -30,6 +31,7 @@ function Header() {
                     <Route path="pages/NhanKhach" element={<NhanKhach />} />
                     <Route path="pages/ThanhToan" element={<ThanhToan />} />
                 </Routes>
+                <Footer />
             </div>
         </Router>
     );

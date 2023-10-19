@@ -5,12 +5,17 @@
     box-shadow: none;
 }
 
-#App {
-    width: 88%;
+#root {
+    font-family: "Times New Roman";
+    padding: 0;
+    border: none;
+    margin: 0;
+    background-color: #e9e7e7;
+    box-shadow: none;
 }
 
-#root {
-    background-color: #ccc;
+#App {
+    width: 70%;
     margin: auto;
 }
 
@@ -64,7 +69,6 @@ button:hover {
 }
 
 a {
-    color: black;
     text-decoration: none;
 }
 

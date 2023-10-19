@@ -1,0 +1,51 @@
+#QLDV {
+    margin-top: 20px;
+    width: 100%;
+}
+
+.TextQldv {
+    width: 100%;
+    color: #007bff;
+    font-size: 1.8em;
+    font-weight: 600;
+    text-align: center;
+}
+
+table {
+    width: 90%;
+    border: 1px solid black;
+}
+
+td,
+th {
+    border: 1px solid black;
+    text-align: center;
+}
+
+.stt {
+    width: 4%;
+}
+
+.nameDV {
+    width: 37%;
+}
+
+.gia {
+    width: 20%;
+}
+
+.time {
+    width: 15%;
+}
+
+.sua {
+    width: 8%;
+}
+
+.xoa {
+    width: 8%;
+}
+
+.chiTiet {
+    width: 8%;
+}
