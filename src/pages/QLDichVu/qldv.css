@@ -1,9 +1,10 @@
 #QLDV {
     margin-top: 20px;
     width: 100%;
+    position: relative;
 }
 
-.TextQldv {
+.TextHeader {
     width: 100%;
     color: #007bff;
     font-size: 1.8em;
@@ -12,7 +13,8 @@
 }
 
 table {
-    width: 90%;
+    width: 100%;
+    margin: auto;
     border: 1px solid black;
 }
 
@@ -48,4 +50,45 @@ th {
 
 .chiTiet {
     width: 8%;
+}
+
+.textHeader {
+    font-size: 1.6rem;
+    font-weight: 600;
+}
+
+.XoaDV {}
+
+#xoa {
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    border: 1px solid black;
+    position: absolute;
+    top: 40%;
+    left: 35%;
+}
+
+.btn {
+    background-color: black;
+    padding: 5px;
+    width: 35%;
+}
+
+.btns {
+    width: 100%;
+    margin-top: 20px;
+    display: flex;
+    justify-content: space-between;
+}
+
+#detailDV {
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    border: 1px solid black;
+    position: absolute;
+    top: 10%;
+    left: 8%;
+    width: 80%;
 }

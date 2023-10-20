@@ -1,8 +1,12 @@
-import React from 'react';
-import './qldv.css'
-import Search from '~/pages/Search';
+import React, { useState } from 'react';
+import './qldv.css';
+import ListDV from './ListDV';
+import DetailDV from './DetailDV';
+import XoaDV from './XoaDV';
 
 function QLDV(params) {
+    const [detailDV, setDetailDV] = useState(false);
+    const [selectedItem, setSelectedItem] = useState(null);
 
     const fakedata1 = [
         {
@@ -10,37 +14,68 @@ function QLDV(params) {
             name: 'DV1',
             time: '30p',
             price: 500000,
-        }
+            describe: 'mô tả DV1',
+            dsNVThucHien: [
+                {
+                    id: 12,
+                    fullName: 'Lê Thị Phong'
+                },
+                {
+                    id: 12,
+                    fullName: 'Lê Thị Phong'
+                },
+                {
+                    id: 12,
+                    fullName: 'Lê Thị Phong'
+                },
+            ],
+        },
     ]
+
+    const handleItemClick = (item) => {
+        setSelectedItem(item);
+        setDetailDV(true);
+    };
+
+    const [isConfirmationDialogOpen, setConfirmationDialogOpen] = useState(false);
+
+    const handleCancelDelete = () => {
+        // Người dùng chọn hủy
+        setConfirmationDialogOpen(false);
+    };
+
+    const handleConfirmDelete = () => {
+        alert('Bạn đã xóa dịch vụ thành công');
+        // Người dùng chọn xác nhận xóa, thực hiện xóa mục tại đây
+        setConfirmationDialogOpen(false);
+    };
+
+    const handleClickXoa = (item) => {
+        setConfirmationDialogOpen(true);
+    };
+
+    const goBack = () => {
+        setDetailDV(false);
+        setSelectedItem(null);
+    }
 
     return (
         <div id='QLDV'>
-            <div className='TextQldv'>QUẢN LÝ DỊCH VỤ</div>
-            <Search />
-            <div>Danh sách dịch vụ</div>
-            <table>
-                <thead>
-                    <th className='stt'>STT</th>
-                    <th className='nameDV'>Tên dịch vụ</th>
-                    <th className='gia'>Giá</th>
-                    <th className='time'>Thời gian</th>
-                    <th className='sua'></th>
-                    <th className='xoa'></th>
-                    <th className='chiTiet'></th>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>{fakedata1[0].id}</td>
-                        <td>{fakedata1[0].name}</td>
-                        <td>{fakedata1[0].price}</td>
-                        <td>{fakedata1[0].time}</td>
-                        <td>Sửa</td>
-                        <td>Xoá</td>
-                        <td>Chi tiết</td>
-                    </tr>
-                </tbody>
-            </table>
-            <div>Thêm dịch vụ</div>
+            <ListDV data={fakedata1}
+                handleItemClick={handleItemClick}
+                handleDeleteClick={handleClickXoa}
+            />
+            {detailDV ? (
+                <div id='detailDV'>
+                    <DetailDV item={selectedItem} goBack={goBack} />
+                </div>) : null}
+            {isConfirmationDialogOpen ? (<div id='xoa'>
+                <XoaDV
+                    isOpen={isConfirmationDialogOpen}
+                    onCancel={handleCancelDelete}
+                    onConfirm={handleConfirmDelete}
+                />
+            </div>) : null}
         </div>
     )
 }
