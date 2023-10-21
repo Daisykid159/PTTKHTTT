@@ -20,7 +20,7 @@ const ListDV = (props) => {
                     <th className='chiTiet'></th>
                 </thead>
                 <tbody>
-                    {props.data.map((item, index) => (
+                    {props.data?.map((item, index) => (
                         <tr>
                             <td>{index + 1}</td>
                             <td onClick={() => props.handleItemClick(item)}>{item.name}</td>

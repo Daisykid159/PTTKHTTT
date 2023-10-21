@@ -2,8 +2,9 @@ import React from "react";
 import './qldv.css';
 
 const DetailDV = (props) => {
+
     const a = [];
-    props.item.dsNVThucHien.map((item, indext) => {
+    props.item.dsNVThucHien?.map((item, indext) => {
         a.push(item.fullName);
         return item;
     })
