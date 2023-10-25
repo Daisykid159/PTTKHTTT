@@ -51,7 +51,7 @@ function QLDV(params) {
         try {
             await deleteItem(itemToDelete.id);
             getListdv();
-            alert('Bạn đã xóa dịch vụ thành công');
+            alert('Bạn đã xóa dịch vụ thành công!');
             setConfirmationDialogOpen(false);
         } catch (error) {
             console.error('Lỗi trong quá trình xóa phần tử từ API', error);
